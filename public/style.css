@@ -49,6 +49,7 @@ body {
     font-size: 2rem;
     background-color: maroon;
     color: whitesmoke;
+    padding: .5em;
 }
 
 #navContainer {
