@@ -42,15 +42,11 @@ app.get("/scrape", function (req, res) {
 
         $("div.teaser").each(function (i, element) {
 
-            // Save the text of the element in a "title" variable
             results.title = $(element).find('h3.value').text();
             results.summary = $(element).find('p.summary').text();
             results.link = $(element).find('a').attr('href').split(",")[0].split(" ")[0];
             
             if (results.summary !== '') {
-                // db1.Article.remove({}, function(err) { 
-                //     console.log('collection removed') 
-                //  });
                 db1.Article.create(results)
                     .then(function (data) {
                     })
@@ -65,14 +61,13 @@ app.get("/scrape", function (req, res) {
 });
 
 app.get("/", function (req, res) {
-    // grab all the articles to display
     db1.Article.find({})
         .then(function (data) {
             var hbsObject = {
                 articles: data
             }
-            res.render('index', hbsObject)
-            console.log(hbsObject)
+            res.render('index', hbsObject);
+            console.log(hbsObject);
         })
 
 });
@@ -84,11 +79,9 @@ app.get('/article/:id', function (req, res) {
             res.render('comment', { article })
             console.log(article)
         });
-
 });
 
 app.get('/save/:id', (req, res) => {
-    // update article to saved when save is clicked changing saved to 'true'
     db1.Article
         .update({ _id: req.params.id }, { saved: true })
         .then(function () { res.redirect('/') })
@@ -102,8 +95,8 @@ app.get('/saved', function (req, res) {
                 articles: data
             }
             res.render('saved', hbsObject)
-        })
-})
+        });
+});
 
 app.put('/delete/:id', function (req, res) {
     db1.Article
@@ -111,13 +104,12 @@ app.put('/delete/:id', function (req, res) {
         .then(function () { res.redirect('saved') })
         .catch(function (err) {
             res.json(err);
-        })
-})
+        });
+});
 
 app.post('/comment/:id', function (req, res) {
     db1.Comment.create({ comment: req.body.comment })
         .then(function (comment) {
-
             return db1.Article.findOneAndUpdate(
                 { _id: req.params.id },
                 { $push: { comment: comment._id } },
@@ -125,13 +117,12 @@ app.post('/comment/:id', function (req, res) {
             )
                 .then(function () {
                     res.json(comment)
-                })
+                });
         })
-        // .then(function(){res.redirect('saved')})
         .catch(function (err) {
             res.json(err)
-        })
-})
+        });
+});
 
 app.put('/comment/:id', function (req, res) {
     db1.Comment
@@ -139,8 +130,5 @@ app.put('/comment/:id', function (req, res) {
         .then(function () { res.redirect('saved') })
         .catch(function (err) {
             res.json(err);
-        })
-})
-
-
-
+        });
+});

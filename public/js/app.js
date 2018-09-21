@@ -6,17 +6,16 @@ $('#scrapeButton').click(function () {
     location.href = '/scrape'
     console.log('clicked')
 })
+
 $('#savedButton').click(function () {
     console.log('clicked')
     location.href = '/saved'
-
 })
 
 $('.viewArticleButton').click(function () {
     console.log('clicked')
     window.location.href = `/article/${$(this).attr('data-id')}`
 });
-
 
 
 $('.deleteButton').click(function () {
@@ -29,10 +28,8 @@ $('.deleteButton').click(function () {
             window.location.href = '/saved';
         },
         error: function (error) {
-
         }
     });
-
 });
 
 $('.saveButton').click(function () {
@@ -44,7 +41,6 @@ $('.saveButton').click(function () {
             window.location.href = '/';
         },
         error: function (error) {
-
         }
     });
 });
@@ -80,5 +76,4 @@ $('.del').click(function (e) {
         error: function (error) {
         }
     });
-
 });
