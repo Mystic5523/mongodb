@@ -1,0 +1,91 @@
+.saveButton {
+    background-color: maroon;
+}
+.deleteButton {
+    background-color: maroon;
+}
+.deleteButton:hover{
+    background-color: black;
+    color: white;
+}
+.commentButton {
+    background-color: maroon;  
+}
+.commentButton:hover {
+    background-color: black;
+    color: white;
+}
+#scrapeButton {
+    background-color: maroon;
+}
+
+#scrapeButton:hover {
+    background-color: black
+}
+#savedButton {
+    background-color: maroon;
+}
+#savedButton:hover {
+    background-color: black
+}
+
+.saveButton:hover {
+    background-color: black
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+#clearButton {
+    background-color: maroon;
+}
+#clearButton:hover {
+    background-color: black;
+}
+
+#articleTitle {
+    font-weight: 900;
+    font-size: 2rem;
+    background-color: maroon;
+    color: white;
+}
+
+#navContainer {
+    margin: auto;
+    margin-left: 2rem;
+    width: 100%;
+    
+}
+
+.title {
+    font-size: 90px;
+    text-transform: uppercase;
+    color: #0793cf
+}
+
+.commentDiv {
+    margin-top: 4rem;
+}
+
+#commentP {
+    display: inline-block
+}
+
+.del {
+    margin-left: 2rem;
+    background-color: maroon;
+}
+
+.del:hover{
+    background-color: black;
+    color: white;
+}
+
+.viewArticleButton {
+    background-color: maroon;
+}
+
+.viewArticleButton:hover {
+    background-color: black;
+}

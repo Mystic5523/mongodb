@@ -1,0 +1,24 @@
+<h3 class="title">{{article.title}}</h3>
+<p class="summary">{{article.summary}}{{#if article.link }} <span><a href='{{ article.link }}'>Read More...</a></span>{{/if }}</p>
+
+
+<form id="commentForm" class="scroll">
+    <hr><br>
+    <label for="comment">Add Comment</label>
+    <input class="input-field validate" id="commentText" name="comment" type="text" required>
+    <button class="btn btn-primary commentButton green" type="submit" data-id={{article._id}}>Submit</button>
+</form>
+
+<hr>
+
+<h4 class="title">Comments:</h4>
+{{#unless article.comment }}
+    <p>No comments yet!</p>
+{{/unless }}
+{{#each article.comment}}
+    {{#unless this.deleted}}
+    <div class="commentDiv scroll">
+        <p id='commentP'>{{ this.comment }}</p> <button data-id={{this._id}} class="btn-primary btn red del">x</button>
+    </div>
+    {{/unless }}
+{{/each}}
