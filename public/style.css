@@ -6,14 +6,14 @@
 }
 .deleteButton:hover{
     background-color: black;
-    color: white;
+    color: whitesmoke;
 }
 .commentButton {
     background-color: maroon;  
 }
 .commentButton:hover {
     background-color: black;
-    color: white;
+    color: whitesmoke;
 }
 #scrapeButton {
     background-color: maroon;
@@ -48,7 +48,7 @@ body {
     font-weight: 900;
     font-size: 2rem;
     background-color: maroon;
-    color: white;
+    color: whitesmoke;
 }
 
 #navContainer {
@@ -79,7 +79,7 @@ body {
 
 .del:hover{
     background-color: black;
-    color: white;
+    color: whitesmoke;
 }
 
 .viewArticleButton {
